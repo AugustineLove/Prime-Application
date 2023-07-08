@@ -48,6 +48,23 @@
         </LinearLayout>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:id="@+id/Help"
+            app:cornerRadius="0dp"
+            android:textColor="@color/white"
+            android:text="HELP"
+            android:backgroundTint="#FF9800"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="150dp"

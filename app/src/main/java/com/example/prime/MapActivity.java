@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -39,6 +42,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private CardView cardView;
     private EditText searchBox;
     private GoogleMap mMap;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +52,18 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         cardView.setOnClickListener(v-> {
             startActivity(new Intent(MapActivity.this, DetailActivity.class));
         } );
+        Button button = findViewById(R.id.Help);
+        button.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View view) {
+                navigateToScreen();
+            }
+            private void navigateToScreen() {
+                Intent intent = new Intent(MapActivity.this, HelpActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -98,7 +113,17 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mMap = googleMap;
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
-        } else {
+
+            // Get the user's current location
+            FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(this, location -> {
+                        if (location != null) {
+                            LatLng currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 15f));
+                        }
+                    });
+        }else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
         }
 

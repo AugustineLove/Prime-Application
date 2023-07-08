@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/signinbackground"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3/BOOK"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fiesta Royale Hotel"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:layout_gravity="center"
+            />
+        <LinearLayout
+            android:layout_width="400dp"
+            android:background="#FF9800"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deluxe Room"
+                    android:textSize="30dp"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Arriving 15-July"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Staying 1 night"
+                    android:textSize="30dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adult: 3"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:textColor="@color/black"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="end|center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Cost"
+                android:textColor="@color/black"
+                android:layout_marginRight="25dp"
+                android:textSize="25dp"
+
+                />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#FF9800"
+                android:layout_marginRight="20dp"
+                app:cornerRadius="0dp"
+
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="350dp"
+            android:background="#FF9800"
+            android:orientation="vertical"
+            android:layout_height="120dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:text="credit Card details"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:text="Gabriella Narch"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
